@@ -56,13 +56,9 @@ class AddDetialTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        print("wowwwwwwwwwwwwww")
-        
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! classTableViewCell
         
         let temp = classes[indexPath.row]
-        
-        print("wow")
         
         cell.name.text = temp.name
         cell.detail.text = temp.time
@@ -73,8 +69,6 @@ class AddDetialTableViewController: UITableViewController {
     
     @IBAction func savePlayerDetail(segue:UIStoryboardSegue) {
         
-        print("ww")
-        
         if let AddTableViewController = segue.sourceViewController as? AddTableViewController {
             
             print(AddTableViewController.cls)
@@ -83,9 +77,7 @@ class AddDetialTableViewController: UITableViewController {
             //add the new player to the players array
             if let cls = AddTableViewController.cls {
                 classes.append(cls)
-                
-                print(cls.location)
-                
+                                
                 //update the tableView
                 let indexPath = NSIndexPath(forRow: classes.count-1, inSection: 0)
                 tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
