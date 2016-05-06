@@ -71,13 +71,11 @@ class AddDetialTableViewController: UITableViewController {
         
         if let AddTableViewController = segue.sourceViewController as? AddTableViewController {
             
-            print(AddTableViewController.cls)
-
             
             //add the new player to the players array
             if let cls = AddTableViewController.cls {
                 classes.append(cls)
-                                
+                
                 //update the tableView
                 let indexPath = NSIndexPath(forRow: classes.count-1, inSection: 0)
                 tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
